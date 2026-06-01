@@ -90,26 +90,6 @@ section.galleries p {
 	margin-bottom: 3rem;
 }
 
-.gallery-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: 2rem;
-	justify-items: center;
-}
-
-.gallery-item img {
-	width: 100%;
-	max-height: 250px;
-	object-fit: cover;
-	border-radius: 10px;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-item img:hover {
-	transform: scale(1.05);
-	box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
-}
 
 .logo {
 	display: flex;
@@ -119,7 +99,7 @@ section.galleries p {
 }
 
 .logo img {
-	height: 500px;  
+	height: 60px;
 	width: auto;
 	object-fit: contain;
 	transition: transform 0.3s ease;
@@ -175,11 +155,6 @@ nav a.active {
 	}
 }
 
-@media (max-width: 600px) {
-	.gallery-container {
-		grid-template-columns: 1fr;
-	}
-}
 
 section {
 	min-height: auto;
