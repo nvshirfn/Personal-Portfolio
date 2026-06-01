@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8"
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"
-	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Galleries</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"> 
 	
@@ -105,7 +105,7 @@
 			<img class="slide" src="pictures/trip.jpg" alt="image6">
 
 		</div>
-		<button class="prev" onclick="prevSlide()">&#10094</button>
+		<button class="previous" onclick="prevSlide()">&#10094</button>
 		<button class="next" onclick="nextSlide()">&#10095</button>
 
 	</div>
@@ -148,6 +148,7 @@
 		clearInterval(intervalId);
 		slideIndex--;
 		showSlide(slideIndex);
+		intervalId = setInterval(nextSlide, 5000);
 	}
 
 	function nextSlide(){
@@ -160,7 +161,7 @@
 	
 	
 	<footer>
-        <p>&copy; 2025 Danish. All rights reserved. <a href="disclaimer.html">Disclaimer & Terms</a></p>
+        <p>&copy; 2025 Danish. All rights reserved. <a href="disclaimer.html">Disclaimer & Terms</a> | <a href="contact.html">Contact</a></p>
     </footer>
 	
 </body>		
