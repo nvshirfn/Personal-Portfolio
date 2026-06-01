@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign-Up</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .signup-section {
+      padding: 12rem 9%;
+      min-height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .signup-title {
+      font-size: 5rem;
+      color: #87CEEB;
+      margin-bottom: 3rem;
+    }
+
+    .signup-form {
+      background-color: #111;
+      padding: 3rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 15px #87CEEB;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .signup-form label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-size: 1.6rem;
+      color: #87CEEB;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"] {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid #87CEEB;
+      border-radius: 0.5rem;
+      background-color: #1a1a1a;
+      color: white;
+      font-size: 1.4rem;
+    }
+
+    .signup-form .gender {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .signup-form .gender label {
+      margin-right: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .signup-form .gender input {
+      margin-right: 0.5rem;
+    }
+
+    .signup-form .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .signup-form button {
+      padding: 1rem 2.5rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 0.7rem;
+      background-color: #87CEEB;
+      color: black;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .signup-form button:hover {
+      background-color: #00bfff;
+    }
+	
+	span.error-message {
+		display: block;
+		margin-top: -1rem; 
+		margin-bottom: 1rem;
+		color: red;
+		font-size: 1.2rem;
+	}
+	
+	#doesnotmatch-error {
+	margin-bottom: 2rem; 
+	}
+	
+	</style>
+  
+	<script>
+		function validateForm() {
+		let fname = document.forms["signupform"]["firstName"].value.trim();
+		let lname = document.forms["signupform"]["lastName"].value.trim();
+		let genderSelected = document.querySelector('input[name="gender"]:checked');
+		let email = document.forms["signupform"]["email"].value.trim();
+		let username = document.forms["signupform"]["username"].value.trim();
+		let password = document.forms["signupform"]["password"].value.trim();
+		let confirmPass = document.forms["signupform"]["confirmPassword"].value.trim();
+		
+		document.getElementById("fname-error").innerText = "";
+		document.getElementById("lname-error").innerText = "";
+		document.getElementById("gender-error").innerText = "";
+		document.getElementById("email-error").innerText = "";
+		document.getElementById("username-error").innerText = "";
+		document.getElementById("password-error").innerText = "";
+		document.getElementById("retypepass-error").innerText = "";
+		document.getElementById("doesnotmatch-error").innerText = "";
+
+
+		let valid = true;
+		
+		if (fname === "") {
+			document.getElementById("fname-error").innerText = "First name is required.";
+		valid = false;
+		}
+		
+		if (lname === "") {
+			document.getElementById("lname-error").innerText = "Last name is required.";
+		valid = false;
+		}
+		
+		if (!genderSelected) {
+			document.getElementById("gender-error").innerText = "Please select your gender.";
+		valid = false;
+		}
+		
+		if (email === "") {
+			document.getElementById("email-error").innerText = "Email is required.";
+		valid = false;
+		}
+		
+		if (username === "") {
+			document.getElementById("username-error").innerText = "Username is required.";
+		valid = false;
+		}
+		
+		if (password === "") {
+			document.getElementById("password-error").innerText = "Password is required.";
+		valid = false;
+		}
+
+
+		if (confirmPass === "") {
+		document.getElementById("retypepass-error").innerText = "Confirm Password is required.";
+		valid = false;
+		}
+		
+		else if (password !== "" && password !== confirmPass ) {
+		document.getElementById("doesnotmatch-error").innerText = "Password does not match.";
+		valid = false;
+		}
+	
+		return valid;
+		}
+	
+		function resetform() {
+		document.getElementById("signupform").reset();
+		document.getElementById("fname-error").innerText = "";
+		document.getElementById("lname-error").innerText = "";
+		document.getElementById("gender-error").innerText = "";
+		document.getElementById("email-error").innerText = "";
+		document.getElementById("username-error").innerText = "";
+		document.getElementById("password-error").innerText = "";
+		document.getElementById("retypepass-error").innerText = "";
+		document.getElementById("doesnotmatch-error").innerText = "";
+		document.getElementById("firstName").focus();
+
+		}
+	
+	</script>
+  
+</head>
+
+<body>
+
+	<div class="social-icons">
+		<a href="https://www.linkedin.com/in/muhammad-danish-irfan-bin-muhaizul-ab5412358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+		<a href="https://www.instagram.com/nvshirfn?igsh=MWJnNTZ5aG0wMGgxZw%3D%3D&utm_source=qr" target="_blank""><i class="fa-brands fa-instagram"></i></a>
+		<a href="https://www.youtube.com/@nish218" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+	</div>
+	
+  <header>
+        <a href="index.html" class="logo"><img src="pictures/logo.png" alt="Danish Logo" style="height: 60px;"></a>
+
+    <nav>
+      <a href="biography.html">Biography</a>
+      <a href="timetable.html">Timetable</a>
+      <a href="slideshow.html">Galleries</a>
+      <a href="download.html">Download</a>
+      <a href="links.html">Links</a>
+      <a href="signinjs.html">Sign-In</a>
+      <a href="signout.html">Sign-Out</a>
+    </nav>
+  </header>
+
+	<section class="signup-section">
+		<h1 class="signup-title">Sign Up</h1>
+		<form id="signupform" name="signupform" class="signup-form" action="signupsuccess.html" onsubmit="return validateForm()" method="post">
+		<label for="firstName">First Name:</label>
+		<input type="text" id="firstName" name="firstName">
+		<span id="fname-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+		<label for="lastName">Last Name:</label>
+		<input type="text" id="lastName" name="lastName">
+		<span id="lname-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+		<div class="gender">
+			<label>Gender:</label>
+			<input type="radio" id="male" name="gender" value="Male">
+			<label for="male">Male</label>
+			<input type="radio" id="female" name="gender" value="Female">
+			<label for="female">Female</label>
+			</div>
+		<span id="gender-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email">
+	  <span id="email-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+	  <span id="username-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+	  <span id="password-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+      <label for="confirmPassword">Re-enter Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword">
+	  <span id="retypepass-error" class="error-message" style="color:red; font-size:1.2rem;"></span> 
+	  <span id="doesnotmatch-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+
+      <div class="buttons">
+        <button type="submit">Sign Up</button>
+        <button type="button" onclick="resetform()">Reset</button>
+      </div>
+    </form>
+  </section>
+  
+  <footer>
+		<p>&copy; 2025 Danish. All rights reserved. <a href="disclaimer.html">Disclaimer & Terms</a></p>
+	</footer>
+
+</body>
+</html>

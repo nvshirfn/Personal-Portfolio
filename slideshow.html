@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css"> 
+	
+	<style>
+	
+	.slider{
+		position: relative;
+		width: 90%;
+		max-width: 450px;
+		margin: 10px auto 40px auto;
+		overflow: hidden;
+		border-radius: 50px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+	
+	.slider img{
+		width: 100%;
+		height: auto;
+		display: none;
+		border-radius: 10px;
+	}
+	
+	img.displaySlide{
+		display: block;
+		animation-name: fade;
+		animation-duration: 1.5s;
+	}
+	
+	.slider button{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 2rem;
+		padding: 10px 15px;
+		border: none;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		border-radius: 50%;
+		z-index: 1;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+	
+	.slider button:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+	
+	.previous{
+		left: 10px;
+	}
+	
+	.next{
+		right: 10px;
+	}
+	
+	@keyframes fade{
+		from {opacity: 0.5}
+		to {opacity: 1}
+	}
+	
+	</style>
+	
+	
+</head>
+
+<body>
+
+	<div class="social-icons">
+		<a href="https://www.linkedin.com/in/muhammad-danish-irfan-bin-muhaizul-ab5412358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+		<a href="https://www.instagram.com/nvshirfn?igsh=MWJnNTZ5aG0wMGgxZw%3D%3D&utm_source=qr" target="_blank""><i class="fa-brands fa-instagram"></i></a>
+		<a href="https://www.youtube.com/@nish218" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+	</div>
+	
+	<header>
+        <a href="index.html" class="logo"><img src="pictures/logo.png" alt="Danish Logo" style="height: 60px;"></a>
+
+        <nav>
+            <a href="biography.html">Biography</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="slideshow.html" class="active">Galleries</a>
+            <a href="download.html">Download</a>
+            <a href="links.html">Links</a>
+            <a href="signinjs.html">Sign-In</a>
+            <a href="signout.html">Sign-Out</a>
+        </nav>
+    </header>
+	
+	<section class="galleries">
+    <h1>Image Galleries</h1>
+	</section>
+	
+	<div class="slider">
+		<div class="slides">
+			<img class="slide" src="pictures/cat.jpg" alt="image1">
+			<img class="slide" src="pictures/deanlist.jpg" alt="image2">
+			<img class="slide" src="pictures/parents.jpg" alt="image3">
+			<img class="slide" src="pictures/raya.jpg" alt="image4">
+			<img class="slide" src="pictures/sem1.jpg" alt="image5">
+			<img class="slide" src="pictures/trip.jpg" alt="image6">
+
+		</div>
+		<button class="prev" onclick="prevSlide()">&#10094</button>
+		<button class="next" onclick="nextSlide()">&#10095</button>
+
+	</div>
+	<script>
+	
+	const slides = document.querySelectorAll(".slides img");
+	let slideIndex = 0;
+	let intervalId = null;
+	
+	initializeSlider();
+
+	function initializeSlider(){
+		
+		if(slides.length > 0){
+			slides[slideIndex].classList.add("displaySlide");
+			intervalId = setInterval(nextSlide, 5000)
+		}
+		
+	}
+
+	function showSlide(index){
+	
+		if(index >= slides.length) {
+			slideIndex  = 0;
+		}
+		
+		else if(index < 0){
+			slideIndex = slides.length -1;
+		}
+	
+		slides.forEach(slide => {
+			slide.classList.remove("displaySlide");
+		});
+		
+		slides[slideIndex].classList.add("displaySlide");
+
+	}
+
+	function prevSlide(){
+		clearInterval(intervalId);
+		slideIndex--;
+		showSlide(slideIndex);
+	}
+
+	function nextSlide(){
+	
+		slideIndex++;
+		showSlide(slideIndex);
+	}
+	
+	</script>
+	
+	
+	<footer>
+        <p>&copy; 2025 Danish. All rights reserved. <a href="disclaimer.html">Disclaimer & Terms</a></p>
+    </footer>
+	
+</body>		
+</html>

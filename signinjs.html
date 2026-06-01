@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign-In</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .signin-section {
+      padding: 12rem 9%;
+      min-height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .signin-title {
+      font-size: 5rem;
+      color: #87CEEB;
+      margin-bottom: 3rem;
+    }
+
+    .signin-form {
+      background-color: #111;
+      padding: 3rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 15px #87CEEB;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .signin-form label {
+      display: block;
+      margin-bottom: 0.8rem;
+      font-size: 1.6rem;
+      color: #87CEEB;
+    }
+
+    .signin-form input {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid #87CEEB;
+      border-radius: 0.5rem;
+      background-color: #1a1a1a;
+      color: white;
+      font-size: 1.4rem;
+    }
+
+    .signin-form .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .signin-form button {
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 0.7rem;
+      background-color: #87CEEB;
+      color: black;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .signin-form button:hover {
+      background-color: #00bfff;
+    }
+
+    .signin-form .signup-link {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .signin-form .signup-link a {
+      color: #87CEEB;
+      text-decoration: underline;
+      font-size: 1.4rem;
+    }
+
+    .signin-form .signup-link a:hover {
+      color: white;
+    }
+	
+	span.error-message {
+		display: block;
+		margin-top: -1rem; 
+		margin-bottom: 1rem;
+		color: red;
+		font-size: 1.2rem;
+	}
+
+	
+  </style>
+  
+  <script>
+		function validateForm() {
+		let username = document.forms["myform"]["username"].value.trim();
+		let password = document.forms["myform"]["password"].value.trim();
+
+		document.getElementById("username-error").innerText = "";
+		document.getElementById("password-error").innerText = "";
+
+		let valid = true;
+
+		if (username === "") {
+			document.getElementById("username-error").innerText = "Username is required.";
+		valid = false;
+		}
+
+		if (password === "") {
+		document.getElementById("password-error").innerText = "Password is required.";
+		valid = false;
+		}
+
+		return valid;	
+		}
+		
+		function resetform() {
+		document.getElementById("myform").reset();
+		document.getElementById("username-error").innerText = "";
+		document.getElementById("password-error").innerText = "";
+		document.getElementById("username").focus();
+
+		}
+	
+</script>
+
+  
+</head>
+<body>
+
+	<div class="social-icons">
+		<a href="https://www.linkedin.com/in/muhammad-danish-irfan-bin-muhaizul-ab5412358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+		<a href="https://www.instagram.com/nvshirfn?igsh=MWJnNTZ5aG0wMGgxZw%3D%3D&utm_source=qr" target="_blank""><i class="fa-brands fa-instagram"></i></a>
+		<a href="https://www.youtube.com/@nish218" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+	</div>
+	
+  <header>
+        <a href="index.html" class="logo"><img src="pictures/logo.png" alt="Danish Logo" style="height: 60px;"></a>
+
+    <nav>
+      <a href="biography.html">Biography</a>
+      <a href="timetable.html">Timetable</a>
+      <a href="slideshow.html">Galleries</a>
+      <a href="download.html">Download</a>
+      <a href="links.html">Links</a>
+      <a href="signinjs.html" class="active">Sign-In</a>
+      <a href="signout.html">Sign-Out</a>
+    </nav>
+  </header>
+
+  <section class="signin-section">
+    <h1 class="signin-title">Sign In</h1>
+	<form id="myform" name="myform" class="signin-form" action="loginsuccess.html" onsubmit="return validateForm()" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+	  <span id="username-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+	  <span id="password-error" class="error-message" style="color:red; font-size:1.2rem;"></span>
+
+		<div class="buttons">
+        <button type="submit">Sign In</button>
+		<button type="button" onclick="resetform()">Reset</button>
+		</div>  
+
+      <div class="signup-link">
+        <p>Don't have an account? <a href="signupjs.html">Sign Up here</a></p>
+      </div>
+    </form>
+  </section>
+  
+
+  
+	<footer>
+		<p>&copy; 2025 Danish. All rights reserved. <a href="disclaimer.html">Disclaimer & Terms</a></p>
+	</footer>
+
+</body>
+</html>

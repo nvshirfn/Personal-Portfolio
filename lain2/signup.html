@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign-Up</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    .signup-section {
+      padding: 12rem 9%;
+      min-height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .signup-title {
+      font-size: 5rem;
+      color: #87CEEB;
+      margin-bottom: 3rem;
+    }
+
+    .signup-form {
+      background-color: #111;
+      padding: 3rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 15px #87CEEB;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .signup-form label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-size: 1.6rem;
+      color: #87CEEB;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"] {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid #87CEEB;
+      border-radius: 0.5rem;
+      background-color: #1a1a1a;
+      color: white;
+      font-size: 1.4rem;
+    }
+
+    .signup-form .gender {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .signup-form .gender label {
+      margin-right: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .signup-form .gender input {
+      margin-right: 0.5rem;
+    }
+
+    .signup-form .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .signup-form button {
+      padding: 1rem 2.5rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 0.7rem;
+      background-color: #87CEEB;
+      color: black;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .signup-form button:hover {
+      background-color: #00bfff;
+    }
+  </style>
+</head>
+<body>
+
+	<div class="social-icons">
+		<a href="https://www.linkedin.com/in/muhammad-danish-irfan-bin-muhaizul-ab5412358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+		<a href="https://www.instagram.com/nvshirfn?igsh=MWJnNTZ5aG0wMGgxZw%3D%3D&utm_source=qr" target="_blank""><i class="fa-brands fa-instagram"></i></a>
+		<a href="https://www.youtube.com/@nish218" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+	</div>
+	
+  <header>
+        <a href="http://localhost/profile/biodata.html" class="logo"><img src="pictures/logo.png" alt="Danish Logo" style="height: 60px;"></a>
+
+    <nav>
+      <a href="biography.html">Biography</a>
+      <a href="timetable.html">Timetable</a>
+      <a href="galleries.html">Galleries</a>
+      <a href="download.html">Download</a>
+      <a href="links.html">Links</a>
+      <a href="signin.html">Sign-In</a>
+      <a href="signout.html">Sign-Out</a>
+    </nav>
+  </header>
+
+  <section class="signup-section">
+    <h1 class="signup-title">Sign Up</h1>
+    <form class="signup-form" action="http://localhost/profile/signupsuccess.html" method="post">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required />
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required />
+
+      <div class="gender">
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male" required />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female" required />
+        <label for="female">Female</label>
+      </div>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirmPassword">Re-enter Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+      <div class="buttons">
+        <button type="submit">Sign Up</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </section>
+  
+  <footer>
+		<p>&copy; 2025 Danish. All rights reserved. <a href="http://localhost/profile/disclaimer.html">Disclaimer & Terms</a></p>
+	</footer>
+
+</body>
+</html>

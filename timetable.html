@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Timetable</title>
+  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+	<link rel="stylesheet" href="style.css" />
+
+  <style>
+    td:first-child {
+      color: white;
+      font-weight: 600;
+    }
+
+    .timetable-section {
+      padding: 12rem 9%;
+      background-color: black;
+      color: white;
+    }
+
+    .timetable-title {
+      font-size: 5rem;
+      color: #87CEEB;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.6rem;
+      margin-bottom: 5rem;
+    }
+
+    th, td {
+      border: 1px solid #87CEEB;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: #111;
+      color: white;
+    }
+
+    td a {
+      color: #87CEEB;
+      text-decoration: underline;
+    }
+
+    .course-details {
+      padding-top: 2rem;
+    }
+
+    .course-info {
+      display: none;
+      border: 1px solid #87CEEB;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+      background-color: #161616;
+      box-shadow: 0 0 10px #87CEEB;
+    }
+
+    .course-info:target {
+      display: block;
+    }
+
+    .course-info h3 {
+      color: #87CEEB;
+      font-size: 2.2rem;
+    }
+
+    .course-info p {
+      font-size: 1.6rem;
+    }
+
+    .course-info a {
+      color: #87CEEB;
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+        <a href="index.html" class="logo"><img src="pictures/logo.png" alt="Danish Logo" style="height: 60px;"></a>
+
+    <nav>
+      <a href="biography.html">Biography</a>
+      <a href="timetable.html" class="active">Timetable</a>
+      <a href="slideshow.html">Galleries</a>
+      <a href="download.html">Download</a>
+      <a href="links.html">Links</a>
+      <a href="signinjs.html">Sign-In</a>
+      <a href="signout.html">Sign-Out</a>
+    </nav>
+  </header>
+  
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/muhammad-danish-irfan-bin-muhaizul-ab5412358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank""><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/nvshirfn?igsh=MWJnNTZ5aG0wMGgxZw%3D%3D&utm_source=qr" target="_blank""><i class="fa-brands fa-instagram"></i></a>
+	<a href="https://www.youtube.com/@nish218" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+  </div>
+
+  <section class="timetable-section">
+    <h1 class="timetable-title">My Timetable</h1>
+    <table>
+      <tr>
+        <th>Day/Time</th>
+        <th>8:00 AM - 9:00 AM</th>
+        <th>9:00 AM - 10:00 AM</th>
+        <th>10:00 AM - 11:00 AM</th>
+        <th>11:00 AM - 12:00 PM</th>
+        <th>12:00 PM - 1:00 PM</th>
+        <th>2:00 PM - 3:00 PM</th>
+        <th>3:00 PM - 4:00 PM</th>
+        <th>4:00 PM - 5:00 PM</th>
+        <th>5:00 PM - 6:00 PM</th>
+        <th>6:00 PM - 7:00 PM</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td colspan="2"><a href="#CSC577">CSC577</a></td>
+        <td colspan="3"></td>
+        <td colspan="2"><a href="#CSC508">CSC508</a></td>
+        <td></td>
+        <td colspan="2"><a href="#TMC451">TMC451</a></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td colspan="2"><a href="#CSC569">CSC569</a></td>
+        <td></td>
+        <td colspan="2"><a href="#CSC584">CSC584</a></td>
+        <td colspan="2"><a href="#CSC574">CSC574</a></td>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td></td>
+        <td colspan="2"><a href="#CSC574">CSC574</a></td>
+        <td colspan="2"><a href="#CSC577">CSC577</a></td>
+        <td colspan="2"><a href="#LCC500">LCC500</a></td>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td></td>
+        <td colspan="2"><a href="#CSC584">CSC584</a></td>
+        <td colspan="2"><a href="#CSC508">CSC508</a></td>
+        <td colspan="5"></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td colspan="2"></td>
+        <td colspan="2"><a href="#CSC569">CSC569</a></td>
+        <td colspan="6"></td>
+      </tr>
+    </table>
+
+    <div class="course-details">
+      <div id="CSC577" class="course-info">
+        <h3>CSC577 - Software Engineering - Theories and Principles</h3>
+        <p><strong>Lecturer:</strong> En. Ahmad Farid Bin Najmuddin</p>
+        <a href="#">[Close]</a>
+      </div>
+
+      <div id="CSC508" class="course-info">
+        <h3>CSC508 - Data Structures</h3>
+        <p><strong>Lecturer:</strong> Profesor Madya Ts. Dr. Suraya Binti Masrom</p>
+        <a href="#">[Close]</a>
+      </div>
+
+      <div id="TMC451" class="course-info">
+        <h3>TMC451 - Introductory Mandarin (Level II)</h3>
+        <p><strong>Lecturer:</strong> Ms. Tan Kai Xin</p>
+        <a href="#">[Close]</a>
+      </div>
+
+      <div id="CSC569" class="course-info">
+        <h3>CSC569 - Principles of Compilers</h3>
+        <p><strong>Lecturer:</strong> Madam Nurkhairizan Binti Khairudin</p>
+        <a href="#">[Close]</a>
+      </div>
+
+      <div id="CSC584" class="course-info">
+        <h3>CSC584 - Enterprise Programming</h3>
+        <p><strong>Lecturer:</strong> Dr. Masurah Binti Mohamad</p>
+        <a href="#">[Close]</a>
+      </div>
+
+      <div id="CSC574" class="course-info">
+        <h3>CSC574 - Dynamic Web Application Development</h3>
+        <p><strong>Lecturer:</strong> Madam Siti Rozanae Binti Ismail</p>
+        <a href="#">[Close]</a>
+      </div>
+
+      <div id="LCC500" class="course-info">
+        <h3>LCC500 - English For Workplace Communication</h3>
+        <p><strong>Lecturer:</strong> Ms. Syaza Binti Kamarudin</p>
+        <a href="#">[Close]</a>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+		<p>&copy; 2025 Danish. All rights reserved. <a href="disclaimer.html">Disclaimer & Terms</a></p>
+	</footer>
+
+</body>
+</html>
