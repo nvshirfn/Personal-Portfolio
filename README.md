@@ -1,5 +1,7 @@
 # My Personal Portfolio Website
 
+🌐 **Live Site:** [https://nvshirfn.github.io/Personal-Portfolio/](https://nvshirfn.github.io/Personal-Portfolio/)
+
 A multi-page personal portfolio website I built as coursework for **CSC574 - Dynamic Web Application Development** at Universiti Teknologi MARA (UiTM), Cawangan Perak, Kampus Tapah.
 
 ---
